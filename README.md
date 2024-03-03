@@ -73,10 +73,10 @@ streamlit run dashboard.py
 This will launch the Bike Sharing Dashboard in your default web browser.
 
 ## Screenshots
-![alt text](?raw=true)
-![alt text](?raw=true)
-![alt text](?raw=true)
-![alt text](?raw=true)
-![alt text](?raw=true)
-![alt text](?raw=true)
-![alt text](?raw=true)
+![alt text](https://github.com/coconusz/Bike-Sharing-Dataset/blob/main/Screenshots/1.png?raw=true)
+![alt text](https://github.com/coconusz/Bike-Sharing-Dataset/blob/main/Screenshots/2.png?raw=true)
+![alt text](https://github.com/coconusz/Bike-Sharing-Dataset/blob/main/Screenshots/3.png?raw=true)
+![alt text](https://github.com/coconusz/Bike-Sharing-Dataset/blob/main/Screenshots/4.png?raw=true)
+![alt text](https://github.com/coconusz/Bike-Sharing-Dataset/blob/main/Screenshots/5.png?raw=true)
+![alt text](https://github.com/coconusz/Bike-Sharing-Dataset/blob/main/Screenshots/6.png?raw=true)
+![alt text](https://github.com/coconusz/Bike-Sharing-Dataset/blob/main/Screenshots/7.png?raw=true)
