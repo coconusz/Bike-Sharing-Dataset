@@ -5,20 +5,45 @@ The final project of dicoding "Belajar Analisis Data dengan Python" this project
 ## Table of Contents
 1. [File Structure](#File-Structure)
 2. [Installation](#Installation)
+3. [Screenshots](#Screenshots)
   
 
 ## File Structure
 submission
+
 ├───dashboard
+
 | ├───all_data.csv
+
 | └───dashboard.py
+
 ├───data
+
 | ├───day.csv
+
 | └───hour.csv
+
+├───screenshots
+
+| ├───1.png
+
+| ├───2.png
+
+| ├───3.png
+
+| ├───4.png
+
+| ├───5.png
+
+| ├───6.png
+
+| ├───7.png
+
 ├───notebook.ipynb
+
 ├───README.md
+
 └───requirements.txt
-└───url.txt
 
 ## Installation
 To run this project locally, follow these steps:
@@ -46,3 +71,12 @@ pip install streamlit pandas numpy scipy matplotlib seaborn
 streamlit run dashboard.py
 ```
 This will launch the Bike Sharing Dashboard in your default web browser.
+
+## Screenshots
+![alt text](?raw=true)
+![alt text](?raw=true)
+![alt text](?raw=true)
+![alt text](?raw=true)
+![alt text](?raw=true)
+![alt text](?raw=true)
+![alt text](?raw=true)
