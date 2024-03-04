@@ -1,11 +1,8 @@
-import requests
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 import streamlit as st
 from babel.numbers import format_currency
-from io import StringIO
-from urllib.error import HTTPError
 
 sns.set(style='dark')
 
@@ -79,18 +76,11 @@ def create_weather_rent_df(df):
 url = "https://raw.githubusercontent.com/coconusz/Bike-Sharing-Dataset/main/Dashboard/all_data.csv"
 
 try:
-    response = requests.get(url)
-    response.raise_for_status()  # Raises HTTPError for bad responses
-    all_df = pd.read_csv(StringIO(response.text))
-except HTTPError as e:
-    print(f"HTTP Error: {e}")
-    print(f"HTTP Status Code: {e.code}")
-    print(f"HTTP Error Message: {e.reason}")
-    print(f"Response Content: {response.text}")
-except requests.exceptions.RequestException as e:
-    print(f"Error fetching data: {e}")
+    all_df = pd.read_csv(url)
 except pd.errors.ParserError as e:
     print(f"Error parsing CSV: {e}")
+except Exception as e:
+    print(f"Error: {e}")
 
 # Filter data
 min_date = pd.to_datetime(all_df['date']).dt.date.min()
