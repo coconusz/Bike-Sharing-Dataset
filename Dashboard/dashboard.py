@@ -82,6 +82,8 @@ try:
     all_df = pd.read_csv(pd.compat.StringIO(response.text))
 except requests.exceptions.RequestException as e:
     print(f"Error fetching data: {e}")
+    print(f"HTTP Status Code: {response.status_code}")
+    print(f"Response Content: {response.text}")
 
 # Filter data
 min_date = pd.to_datetime(all_df['date']).dt.date.min()
