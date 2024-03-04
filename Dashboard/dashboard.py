@@ -74,12 +74,12 @@ def create_weather_rent_df(df):
         
 # Load cleaned data
 def load_data():
-    df = pd.read_csv('https://raw.githubusercontent.com/coconusz/Bike-Sharing-Dataset/blob/main/Dashboard/all_data.csv')
+    all_df = pd.read_csv('https://raw.githubusercontent.com/coconusz/Bike-Sharing-Dataset/blob/main/Dashboard/all_data.csv')
     return df
     
 def main():
-    df = load_data()
-    print(df.head())
+    all_df = load_data()
+    print(all_df.head())
     
 if __name__ == "__main__":
     main()
