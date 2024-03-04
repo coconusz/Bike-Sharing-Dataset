@@ -1,3 +1,4 @@
+import requests
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
@@ -73,7 +74,14 @@ def create_weather_rent_df(df):
     return weather_rent_df
         
 # Load cleaned data
-all_df = pd.read_csv("https://raw.githubusercontent.com/coconusz/Bike-Sharing-Dataset/main/Dashboard/all_data.csv")
+url = "https://raw.githubusercontent.com/coconusz/Bike-Sharing-Dataset/main/Dashboard/all_data.csv"
+
+try:
+    response = requests.get(url)
+    response.raise_for_status()  # Raises HTTPError for bad responses
+    all_df = pd.read_csv(pd.compat.StringIO(response.text))
+except requests.exceptions.RequestException as e:
+    print(f"Error fetching data: {e}")
 
 # Filter data
 min_date = pd.to_datetime(all_df['date']).dt.date.min()
