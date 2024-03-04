@@ -73,7 +73,7 @@ def create_weather_rent_df(df):
     return weather_rent_df
         
 # Load cleaned data
-all_df = pd.read_csv("Dashboard/all_data.csv", sep='\t')
+all_df = pd.read_csv("https://raw.githubusercontent.com/coconusz/Bike-Sharing-Dataset/main/Dashboard/all_data.csv")
 
 # Filter data
 min_date = pd.to_datetime(all_df['date']).dt.date.min()
