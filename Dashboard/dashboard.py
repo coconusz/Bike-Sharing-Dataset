@@ -5,7 +5,7 @@ import seaborn as sns
 import streamlit as st
 from babel.numbers import format_currency
 from io import StringIO
-
+from urllib.error import HTTPError
 
 sns.set(style='dark')
 
@@ -80,12 +80,15 @@ url = "https://raw.githubusercontent.com/coconusz/Bike-Sharing-Dataset/main/Dash
 
 try:
     response = requests.get(url)
-    response.raise_for_status()  
+    response.raise_for_status()  # Raises HTTPError for bad responses
     all_df = pd.read_csv(StringIO(response.text))
+except HTTPError as e:
+    print(f"HTTP Error: {e}")
+    print(f"HTTP Status Code: {e.code}")
+    print(f"HTTP Error Message: {e.reason}")
+    print(f"Response Content: {response.text}")
 except requests.exceptions.RequestException as e:
     print(f"Error fetching data: {e}")
-    print(f"HTTP Status Code: {response.status_code}")
-    print(f"Response Content: {response.text}")
 except pd.errors.ParserError as e:
     print(f"Error parsing CSV: {e}")
 
