@@ -4,6 +4,8 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 import streamlit as st
 from babel.numbers import format_currency
+from io import StringIO
+
 
 sns.set(style='dark')
 
@@ -78,12 +80,14 @@ url = "https://raw.githubusercontent.com/coconusz/Bike-Sharing-Dataset/main/Dash
 
 try:
     response = requests.get(url)
-    response.raise_for_status()  # Raises HTTPError for bad responses
-    all_df = pd.read_csv(pd.compat.StringIO(response.text))
+    response.raise_for_status()  
+    all_df = pd.read_csv(StringIO(response.text))
 except requests.exceptions.RequestException as e:
     print(f"Error fetching data: {e}")
     print(f"HTTP Status Code: {response.status_code}")
     print(f"Response Content: {response.text}")
+except pd.errors.ParserError as e:
+    print(f"Error parsing CSV: {e}")
 
 # Filter data
 min_date = pd.to_datetime(all_df['date']).dt.date.min()
